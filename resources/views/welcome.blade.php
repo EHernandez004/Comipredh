@@ -14,7 +14,7 @@
                             <input type="buscador" class="form-control form-control-lg" placeholder="Buscar Puesto ó Área">
                         </div>
                         <div class="col-12 col-md-3">
-                            <button type="buscar" class="btn btn-block btn-lg btn-primary">Buscar</button>
+                            <button type="buscar" class="btn btn-info">Buscar</button>
                         </div>
                     </div>
                 </div>

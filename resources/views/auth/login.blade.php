@@ -42,7 +42,7 @@
                             </div>
                         </div>
                         <div class="footer text-center">
-                            <button type="submit" class="btn btn-simple btn-primary btn-lg">Ingresar</button> 
+                            <button type="submit" class=" btn btn-info">Ingresar</button> 
                         </div>
                     <!--        <a class="btn btn-link" href="{{ route('password.request') }}">
                                 Forgot Your Password?-->

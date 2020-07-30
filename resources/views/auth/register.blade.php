@@ -11,8 +11,9 @@
                     <form class="form" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
                         <div class="header header-primary text-center">
-                            <h4>Registrarte</h4>
-                            <h8>Si eres un Empresario y necesitas talento,<br><a href="#">Registrate aquí </a></h8>
+                            <h4>Registrate</h4>
+                            <h8>Si eres un Empresario y necesitas talento,<br><a href="">
+                            Registrate aquí </a></h8>
                         </div>
                         
                         <div class="content">
@@ -97,7 +98,7 @@
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-info">
                                         Register
                                     </button>
                                 </div>
