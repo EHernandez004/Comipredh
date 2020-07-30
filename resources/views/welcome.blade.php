@@ -4,7 +4,7 @@
 
 @section('content')
  <div class="wrapper">
-        <div class="header header-filter" style="background-image: url('{{asset('img/cdmx.jpg')}}');">
+        <div class="header header-filter" style="background-image: url('{{asset('img/img.jpg')}}');">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">

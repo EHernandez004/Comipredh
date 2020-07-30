@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="wrapper">
-        <div class="header header-filter" style="background-image: url('https://www.olympus-tours.com.mx/galeriaBlog/es-soumaya-museos-en-ciudad-de-mexico.jpg');">
+        <div class="header header-filter" style="background-image: url('{{asset('img/img.jpg')}}');">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">

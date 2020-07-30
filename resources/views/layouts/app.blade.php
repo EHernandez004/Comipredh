@@ -30,8 +30,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="{{url('/')}}">
-                    <img class="navbar-brand" src="{{asset('img/Comipredh.png')}}" alt="Logo" style=" height: 180px; width: 320px;" />
+                <a class="navbar-brand" href="{{url('/')}}">
+                    <img class="navbar-brand" src="{{asset('img/LogoComipredh.png')}}" alt="Logo" style=" height: 120px; width: 180px;" />
+                    <h6>COMIPREDH A.C.</h6>
                 </a>
             </div>
 

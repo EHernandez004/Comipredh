@@ -3,93 +3,96 @@
 @section('body-class','signup-page')
 
 @section('content')
-<div class="header header-filter" style="background-image: url('{{asset('img/city.jpg')}}'); background-size: cover; background-position: top center;">
+<div class="header header-filter" style="background-image: url('{{asset('img/img.jpg')}}'); background-size: cover; background-position: top center;">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Register</div>
+            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+                <div class="card card-signup">
+                    <form class="form" method="POST" action="{{ route('register') }}">
+                        {{ csrf_field() }}
+                        <div class="header header-primary text-center">
+                            <h4>Registrarte</h4>
+                            <h8>Si eres un Empresario y necesitas talento,<br><a href="#">Registrate aquí </a></h8>
+                        </div>
+                        
+                        <div class="content">
+                            <div class="input-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">person</i>
+                                </span>
 
-                    <div class="panel-body">
-                        <form class="form-horizontal" method="POST" action="{{ route('register') }}">
-                            {{ csrf_field() }}
+                               <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required placeholder="Nombre">
 
-                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <label for="name" class="col-md-4 control-label">Nombre</label>
+                                @if ($errors->has('name'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('name') }}</strong>
+                                </span>
+                                @endif
+                            </div>
 
-                                <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                            <div class="input-group{{ $errors->has('apellidos') ? ' has-error' : '' }}">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">people</i>
+                                </span>
 
-                                    @if ($errors->has('name'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('name') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
+                                <input id="apellidos" type="text" class="form-control" name="apellidos" value="{{ old('apellidos') }}" required placeholder="Apellidos">
+
+                                @if ($errors->has('apellidos'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('apellidos') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                             
-                            <div class="form-group{{ $errors->has('apellidos') ? ' has-error' : '' }}">
-                                <label for="name" class="col-md-4 control-label">Apellidos</label>
+                            <div class="input-group{{ $errors->has('telefono') ? ' has-error' : '' }}">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">phone</i>
+                                </span>
 
-                                <div class="col-md-6">
-                                    <input id="apellidos" type="text" class="form-control" name="apellidos" value="{{ old('apellidos') }}" required autofocus>
-
-                                    @if ($errors->has('apellidos'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('apellidos') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
                             
-                            <div class="form-group{{ $errors->has('telefono') ? ' has-error' : '' }}">
-                                <label for="name" class="col-md-4 control-label">Telefono</label>
+                                <input id="telefono" type="text" class="form-control" name="telefono" value="{{ old('telefono') }}" required placeholder="Telefono (55-1234-5678)">
 
-                                <div class="col-md-6">
-                                    <input id="telefono" type="text" class="form-control" name="telefono" value="{{ old('telefono') }}" required autofocus>
-
-                                    @if ($errors->has('telefono'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('telefono') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
+                                @if ($errors->has('telefono'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('telefono') }}</strong>
+                                    </span>
+                                @endif
                             </div>
 
-                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                            <div class="input-group{{ $errors->has('email') ? ' has-error' : '' }}">
 
-                                <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                <span class="input-group-addon">
+                                    <i class="material-icons">email</i>
+                                </span>
+                                
+                                <input id="email" type="email" class="form-control" name="email" required autofocus placeholder="alguien@comipredh.com">
 
-                                    @if ($errors->has('email'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('email') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
                             </div>
 
-                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                <label for="password" class="col-md-4 control-label">Password</label>
+                            <div class="input-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">lock_outline</i>
+                                </span>
+                                <input id="password" type="password" class="form-control" name="password" required placeholder="Contraseña...">
 
-                                <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control" name="password" required>
-
-                                    @if ($errors->has('password'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('password') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
                             </div>
 
-                            <div class="form-group">
-                                <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">lock_outline</i>    
+                                </span>
 
-                                <div class="col-md-6">
-                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                                </div>
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required placeholder="Confirmar Contraseña...">
                             </div>
 
                             <div class="form-group">
@@ -99,8 +102,8 @@
                                     </button>
                                 </div>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
