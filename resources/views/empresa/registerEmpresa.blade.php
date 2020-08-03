@@ -12,7 +12,7 @@
                     <form class="form" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
                         <div class="header header-primary text-center">
-                            <h4>Registrate</h4>
+                            <h4>Registra tu Empresa</h4>
                         </div>
                         
                         <div class="content">
@@ -21,7 +21,7 @@
                                     <i class="material-icons">person</i>
                                 </span>
 
-                               <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required placeholder="Nombre">
+                               <input id="nombre" type="text" class="form-control" name="name" value="{{ old('name') }}" required placeholder="Nombre">
 
                                 @if ($errors->has('name'))
                                 <span class="help-block">
