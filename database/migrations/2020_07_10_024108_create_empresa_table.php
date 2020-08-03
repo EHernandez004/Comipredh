@@ -26,6 +26,12 @@ class CreateEmpresaTable extends Migration
             $table->string('estado');
             $table->string('correo_enc')->unique();
             $table->string('contrasena');
+            
+            //FK
+            $table->integer('id_user')->unsigned();
+            
+            $table->foreign('id_user')->references('id')->on('users');
+
             $table->timestamps();
         });
     }

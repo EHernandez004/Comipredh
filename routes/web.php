@@ -10,7 +10,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 //Autentificacion entre administrador y usuario.
-Route::middleware(['auth','admin'])->prefix('admin')->namespace('Admin')
+Route::middleware(['auth','rol'])->prefix('admin')->namespace('Admin')
 ->group(function (){
     
     

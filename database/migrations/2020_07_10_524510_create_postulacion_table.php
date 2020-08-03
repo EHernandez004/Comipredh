@@ -18,9 +18,16 @@ class CreatePostulacionTable extends Migration
             $table->string('nombre');
             $table->date('fecha');
             $table->time('hora');
-            $table->integer('vacante_id_vacante');
-            $table->integer('vacante_empresa_id_empresa');
-            $table->integer('usuario_id_usuario');
+
+            //FK
+            $table->integer('id_vacante')->unsigned();
+            $table->integer('id_empresa')->unsigned();
+            $table->integer('id_user')->unsigned();
+
+            $table->foreign('id_vacante')->references('id_vacante')->on('vacante');
+            $table->foreign('id_empresa')->references('id_empresa')->on('empresa');
+            $table->foreign('id_user')->references('id')->on('users');
+
             $table->timestamps();
         });
     }

@@ -15,13 +15,21 @@ class CreateVacanteTable extends Migration
     {
         Schema::create('vacante', function (Blueprint $table) {
             $table->increments('id_vacante');
+
             $table->string('nombre');
-            $table->string('area')->nullable($value = true);
-            $table->string('descripcion')->nullable($value = true);
+            $table->string('area')->nullable();
+            $table->string('descripcion')->nullable();
             $table->date('fecha');
-            $table->double('sueldo_min')->nullable($value = true);
-            $table->double('sueldo_max')->nullable($value = true);
-            $table->integer('empresa_id_empresa');
+            $table->float('sueldo_min')->nullable();
+            $table->float('sueldo_max')->nullable();
+
+            //FK
+            $table->integer('id_empresa')->unsigned();
+            $table->integer('id_user')->unsigned();
+
+            $table->foreign('id_empresa')->references('id_empresa')->on('empresa');
+            $table->foreign('id_user')->references('id')->on('users');
+
             $table->timestamps();
         });
     }
