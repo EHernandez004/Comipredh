@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@section('title','Index')
 @section('body-class','landing-page')
 
 @section('content')

@@ -2,6 +2,8 @@
 
 Route::get('/', 'WelcomeController@welcome');
 
+Route::get('/registrarEmpresa', 'RegisterEmpresaController@registerEmpresa');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

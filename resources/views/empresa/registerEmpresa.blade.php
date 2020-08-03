@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Registrate')
+@section('title', 'Registra Empresa')
 @section('body-class','signup-page')
 
 @section('content')
@@ -13,8 +13,6 @@
                         {{ csrf_field() }}
                         <div class="header header-primary text-center">
                             <h4>Registrate</h4>
-                            <h8>Si eres un Empresario y necesitas talento,<br><a href="{{ url('registrarEmpresa') }}">
-                            Registrate aquí </a></h8>
                         </div>
                         
                         <div class="content">
