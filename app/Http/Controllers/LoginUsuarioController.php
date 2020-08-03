@@ -11,7 +11,7 @@ use Auth;
 class LoginUsuarioController extends Controller
 {
     //
-        public function RegistroCliente(Request $request)
+    public function RegistroCliente(Request $request)
     {
         $validacion = Validator ::make($request->all(),
             [
