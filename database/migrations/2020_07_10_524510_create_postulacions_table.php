@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVacanteTable extends Migration
+class CreatePostulacionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +13,19 @@ class CreateVacanteTable extends Migration
      */
     public function up()
     {
-        Schema::create('vacante', function (Blueprint $table) {
-            $table->increments('id_vacante');
-
+        Schema::create('postulacions', function (Blueprint $table) {
+            $table->increments('id_post');
             $table->string('nombre');
-            $table->string('area')->nullable();
-            $table->string('descripcion')->nullable();
             $table->date('fecha');
-            $table->float('sueldo_min')->nullable();
-            $table->float('sueldo_max')->nullable();
+            $table->time('hora');
 
             //FK
+            $table->integer('id_vacante')->unsigned();
             $table->integer('id_empresa')->unsigned();
             $table->integer('id_user')->unsigned();
 
-            $table->foreign('id_empresa')->references('id_empresa')->on('empresa');
+            $table->foreign('id_vacante')->references('id_vacante')->on('vacantes');
+            $table->foreign('id_empresa')->references('id_empresa')->on('empresas');
             $table->foreign('id_user')->references('id')->on('users');
 
             $table->timestamps();
@@ -41,6 +39,6 @@ class CreateVacanteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vacante');
+        Schema::dropIfExists('postulacions');
     }
 }
