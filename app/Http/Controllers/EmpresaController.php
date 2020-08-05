@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class EmpresaController extends Controller{
 
     public function index(){
-        $empresas = Empresa::all();
+        $empresas = Empresa::paginate(10);
         return view('admin.empresa.index')->with(compact('empresas')); //listado de las empresas.
     }
 
