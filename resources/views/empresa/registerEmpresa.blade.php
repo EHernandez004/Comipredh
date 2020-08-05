@@ -4,102 +4,72 @@
 @section('body-class','signup-page')
 
 @section('content')
-<div class="header header-filter" style="background-image: url('{{asset('img/img.jpg')}}'); background-size: cover; background-position: top center;">
+<div class="header header-filter" style="background-image: url('{{asset('img/img.jpg')}}'); background-size: cover; background-position: top center;"></br>
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+            <div class="col-md-8 col-md-offset-2 col-sm-6 col-sm-offset-3">
                 <div class="card card-signup">
                     <form class="form" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
                         <div class="header header-primary text-center">
                             <h4>Registra tu Empresa</h4>
                         </div>
-                        
-                        <div class="content">
-                            <div class="input-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <span class="input-group-addon">
-                                    <i class="material-icons">person</i>
-                                </span>
+                           
+                            <div class="form-row">
+    <div class="form-group col-md-5">
+      <label for="inputCity">Nombre Empresa </label>
+      <input type="text" class="form-control" id="Nombre" name="Nombre" value="{{ old('nombre') }}" required autofocus placeholder="Comipredh">
+    </div>
+    <div class="form-group col-md-4">
+       <label for="inputCity">RFC</label>
+      <input type="text" class="form-control" id="RFC" name="RFC" value="{{ old('RFC') }}" required autofocus placeholder="R0AL8105218V3">
+    </div>
+    <div class="form-group col-md-3">
+        <label for="inputCity">CP</label>
+      <input type="number" class="form-control" id="CP" name="CP" value="{{ old('CP') }}" required autofocus placeholder="15300">
+    </div>
+  </div>
+    <div class="form-group col-md-6">
+       <label for="inputCity">Calle</label>
+      <input type="text" class="form-control" id="calle" name="calle" value="{{ old('calle') }}" required autofocus placeholder="20 De Noviembre">
+    </div>
+   <div class="form-group col-md-3">
+      <label for="inputCity">Numero Exterior</label>
+      <input type="text" class="form-control" id="N_Ext" name="N_Ext" value="{{ old('N_Ext') }}" required autofocus placeholder="277">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputCity">Numero Interior</label>
+      <input type="text" class="form-control" id="N_Int" name="N_Int" value="{{ old('N_Int') }}" required autofocus placeholder="02">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputCity">Colonia</label>
+      <input type="text" class="form-control" id="colonia" name="colonia" value="{{ old('colonia') }}" required autofocus placeholder="Venustiano Carranza">
+    </div>
+   <div class="form-group col-md-4">
+       <label for="inputCity">Municipio</label>
+                                <input id="Municipio" type="text" class="form-control" name="Municipio" value="{{ old('Municipio') }}" required autofocus placeholder="Venustiano Carranza">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputCity">Estado</label>
+                <input id="Estado" type="text" class="form-control" name="Estado" value="{{ old('Estado') }}"required placeholder="Ciudad de Mexico ">
 
-                               <input id="nombre" type="text" class="form-control" name="name" value="{{ old('name') }}" required placeholder="Nombre">
-
-                                @if ($errors->has('name'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('name') }}</strong>
-                                </span>
-                                @endif
-                            </div>
-
-                            <div class="input-group{{ $errors->has('apellidos') ? ' has-error' : '' }}">
-                                <span class="input-group-addon">
-                                    <i class="material-icons">people</i>
-                                </span>
-
-                                <input id="apellidos" type="text" class="form-control" name="apellidos" value="{{ old('apellidos') }}" required placeholder="Apellidos">
-
-                                @if ($errors->has('apellidos'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('apellidos') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                            
-                            <div class="input-group{{ $errors->has('telefono') ? ' has-error' : '' }}">
-                                <span class="input-group-addon">
-                                    <i class="material-icons">phone</i>
-                                </span>
-
-                            
-                                <input id="telefono" type="text" class="form-control" name="telefono" value="{{ old('telefono') }}" required placeholder="Telefono (55-1234-5678)">
-
-                                @if ($errors->has('telefono'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('telefono') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-
-                            <div class="input-group{{ $errors->has('email') ? ' has-error' : '' }}">
-
-                                <span class="input-group-addon">
-                                    <i class="material-icons">email</i>
-                                </span>
-                                
-                                <input id="email" type="email" class="form-control" name="email" required autofocus placeholder="alguien@comipredh.com">
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-
-                            <div class="input-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                <span class="input-group-addon">
-                                    <i class="material-icons">lock_outline</i>
-                                </span>
-                                <input id="password" type="password" class="form-control" name="password" required placeholder="Contraseña...">
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <i class="material-icons">lock_outline</i>    
-                                </span>
-
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required placeholder="Confirmar Contraseña...">
-                            </div>
+</div>
+<div class="form-group col-md-7">
+      <label for="inputCity">Correo</label>
+      <input type="text" class="form-control" id="correo" name="correo" value="{{ old('correo') }}" required autofocus placeholder="comiprehd@gmail.com">
+    </div>
+   <div class="form-group col-md-5">
+       <label for="inputCity">Contraseña</label>
+            <input id="contrasena" type="text" class="form-control" name="contrasena" value="{{ old('contrasena') }}" required autofocus placeholder="Mayor a 8 Caracteres">
+    </div>
+    
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-info">
+                                 <center>   <button type="submit" class="btn btn-info">
                                         Registrarse
-                                    </button>
+                                    </button></center>
+                                    
                                 </div>
                             </div>
                         </div>
