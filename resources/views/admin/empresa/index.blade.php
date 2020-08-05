@@ -31,7 +31,7 @@
                         <tbody>
                             @foreach($empresas as $empresa)
                             <tr>
-                                <td class = "text-center"> {{$empresa->id_empresa}} </td>
+                                <td class = "text-center"> {{$empresa->id}} </td>
                                 <td>{{$empresa->nombre}}</td>
                                 <td>{{$empresa->rfc}}</td>
                                 <td>{{$empresa->municipio}}</td>
@@ -40,9 +40,9 @@
                                     <button type = "button" rel = "tooltip" title = "Ver perfil" class = "btn btn-info btn-simple btn-xs">
                                         <i class = "fa fa-user"> </i>
                                     </button>
-                                    <button type = "button" rel = "tooltip" title = "Editar perfil" class = "btn btn-success btn-simple btn-xs">
+                                    <a href="{{ url('/admin/empresa/'.$empresa->id.'/edit') }}"  rel="tooltip" title="Editar Acceso" class="btn btn-success btn-simple btn-xs">>
                                         <i class = "fa fa-edit"> </i>
-                                    </button>
+                                    </a>
                                     <button type = "button" rel = "tooltip" title = "Eliminar" class = "btn btn-danger btn-simple btn-xs">
                                         <i class = "fa fa-times"> </i>
                                     </button>

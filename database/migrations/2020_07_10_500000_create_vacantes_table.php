@@ -14,7 +14,7 @@ class CreateVacantesTable extends Migration
     public function up()
     {
         Schema::create('vacantes', function (Blueprint $table) {
-            $table->increments('id_vacante');
+            $table->increments('id');
 
             $table->string('nombre');
             $table->string('area')->nullable();
@@ -27,7 +27,7 @@ class CreateVacantesTable extends Migration
             $table->integer('id_empresa')->unsigned();
             $table->integer('id_user')->unsigned();
 
-            $table->foreign('id_empresa')->references('id_empresa')->on('empresas');
+            $table->foreign('id_empresa')->references('id')->on('empresas');
             $table->foreign('id_user')->references('id')->on('users');
 
             $table->timestamps();
