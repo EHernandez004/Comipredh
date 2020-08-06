@@ -27,14 +27,46 @@
                 {{ csrf_field() }}
 
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <div class="form-group label-floating">
                             <label class="control-label">Nombre de la Empresa</label>
                             <input type="text" class="form-control" name="nombre" value="">
                         </div>
                     </div>
+                     <div class="col-sm-4">
+                        <div class="form-group label-floating">
+                            <label class="control-label">RFC</label>
+                            <input type="text" class="form-control" name="rfc" value="">
+                        </div>
+                    </div>
 
-                <button class="btn btn-primary">Guardar cambios</button>
+                     <div class="col-sm-4">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Estado</label>
+                            <input type="text" class="form-control" name="estado" value="">
+                        </div>
+                    </div>
+         <div class="col-sm-4">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Municipio</label>
+                            <input type="text" class="form-control" name="municipio" value="">
+                        </div>
+                    </div>
+            <div class="col-sm-4">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Correo</label>
+                            <input type="text" class="form-control" name="correo_enc" value="">
+                        </div>
+                    </div>
+            <div class="col-sm-4">
+             <div class="form-group label-floating">
+                            <label class="control-label"></label>
+                            <input type="text" class="form-control" name="" value="">
+                        </div>
+                    </div>
+
+
+                <button class="btn btn-info">Guardar cambios</button>
                 <a href="{{ url('/admin/empresa') }}" class="btn btn-default">Cancelar</a>
             </form>    
         </div>
