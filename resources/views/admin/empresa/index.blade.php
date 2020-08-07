@@ -19,11 +19,12 @@
                     <table class = "table">
                         <thead>
                             <tr>
-                                <th class="col-md-2 text-center"> ID_Empresa </th>
+                                <th class="text-center"> ID_Empresa </th>
                                 <th class="col-md-2 text-center"> Nombre </th>
                                 <th class="col-md-2 text-center"> RFC </th>
                                 <th class="col-md-2 text-center"> Municipio </th>
                                 <th class="col-md-2 text-center"> Correo_Encargado </th>
+                                <th class="col-md-2 text-center"> Acceso </th>
                                 <th class="col-md-2 text-center"> Acciones </th>
                             </tr>
                         </thead>
@@ -31,21 +32,23 @@
                         <tbody>
                             @foreach($empresas as $empresa)
                             <tr>
-                                <td class = "text-center"> {{$empresa->id}} </td>
+                                <td class="text-center"> {{$empresa->id}} </td>
                                 <td>{{$empresa->nombre}}</td>
                                 <td>{{$empresa->rfc}}</td>
                                 <td>{{$empresa->municipio}}</td>
-                                <td>{{$empresa->correo_enc}}</td>
+                                <td>{{$empresa->correo}}</td>
+                                <td>{{$empresa->acceso}}</td>
                                 <td class = "td-actions text-right">
-                                    <button type = "button" rel = "tooltip" title = "Ver perfil" class = "btn btn-info btn-simple btn-xs">
-                                        <i class = "fa fa-user"> </i>
-                                    </button>
-                                    <a href="{{ url('/admin/empresa/'.$empresa->id.'/edit') }}"  rel="tooltip" title="Editar Acceso" class="btn btn-success btn-simple btn-xs">>
+                                    
+                                    <a href="" rel="tooltip" title="Ver producto" class="btn btn-info btn-simple btn-xs" target="_blank">
+                                            <i class="fa fa-info"></i>
+                                    </a>
+                                    <a href="{{ url('/admin/empresa/'.$empresa->id.'/edit') }}"  rel="tooltip" title="Editar Acceso" class="btn btn-success btn-simple btn-xs">
                                         <i class = "fa fa-edit"> </i>
                                     </a>
-                                    <button type = "button" rel = "tooltip" title = "Eliminar" class = "btn btn-danger btn-simple btn-xs">
+                                    <a href="{{ url('/admin/empresa/'.$empresa->id.'/destroy') }}" rel="tooltip" title = "Eliminar" class = "btn btn-danger btn-simple btn-xs">
                                         <i class = "fa fa-times"> </i>
-                                    </button>
+                                    </a>
                                 </td>
                             </tr>
                             @endforeach

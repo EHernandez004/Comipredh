@@ -18,9 +18,11 @@ Route::middleware(['auth','rol'])->prefix('admin')->namespace('Admin')
 });
 
 Route::get('/admin/empresa', 'EmpresaController@index'); //Lista Empresa
-Route::delete('/admin/{id}', 'EmpresaController@destroy'); //Elimina Empresa
+//Route::delete('/admin/{id}', 'EmpresaController@destroy'); //Elimina Empresa
 Route::get('/admin/empresa/{id}/edit', 'EmpresaController@edit'); // Formulario de edición Empresa
 Route::post('/admin/empresa/{id}/edit', 'EmpresaController@update'); // Actualizar el valor de la empresa.
+Route::get('/admin/empresa/{id}/destroy', 'EmpresaController@destroy'); //Elimina Empresa
+
 
 //Logeo
 Route::post ('/registrar','LoginUsuarioController@RegistroCliente');

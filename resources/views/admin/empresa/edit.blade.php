@@ -23,52 +23,61 @@
             @endif
 -->
 
-            <form method="post" action="">
+            <form method="post" action="{{ url('/admin/empresa/'.$empresas->id.'/edit') }}">    
                 {{ csrf_field() }}
 
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="form-group label-floating">
                             <label class="control-label">Nombre de la Empresa</label>
-                            <input type="text" class="form-control" name="nombre" value="">
+                            <input type="text" class="form-control" name="nombre" value="{{$empresas->nombre}}">
                         </div>
                     </div>
-                     <div class="col-sm-4">
+                    
+                    <div class="col-sm-4">
                         <div class="form-group label-floating">
                             <label class="control-label">RFC</label>
-                            <input type="text" class="form-control" name="rfc" value="">
+                            <input type="text" class="form-control" name="rfc" value="{{$empresas->rfc}}">
                         </div>
                     </div>
 
-                     <div class="col-sm-4">
+                    <div class="col-sm-4">
                         <div class="form-group label-floating">
                             <label class="control-label">Estado</label>
-                            <input type="text" class="form-control" name="estado" value="">
+                            <input type="text" class="form-control" name="estado" value="{{$empresas->estado}}">
                         </div>
                     </div>
-         <div class="col-sm-4">
+                    
+                    <div class="col-sm-4">
                         <div class="form-group label-floating">
                             <label class="control-label">Municipio</label>
-                            <input type="text" class="form-control" name="municipio" value="">
+                            <input type="text" class="form-control" name="municipio" value="{{$empresas->municipio}}">
                         </div>
                     </div>
-            <div class="col-sm-4">
+                    
+                    <div class="col-sm-4">
                         <div class="form-group label-floating">
                             <label class="control-label">Correo</label>
-                            <input type="text" class="form-control" name="correo_enc" value="">
+                            <input type="email" class="form-control" name="correo" value="{{$empresas->correo}}">
                         </div>
                     </div>
-            <div class="col-sm-4">
-             <div class="form-group label-floating">
-                            <label class="control-label"></label>
-                            <input type="text" class="form-control" name="" value="">
+                
+                    <div class="col-sm-4">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Acceso de la empresa</label>
+                            <select class="form-control" name="acceso">
+                                <option value="0">No Aceptado</option>
+                                <option value="1">Aceptado</option>
+                            </select>
                         </div>
                     </div>
 
+                <br><br><br><br><br><br><br><br>
 
-                <button class="btn btn-info">Guardar cambios</button>
-                <a href="{{ url('/admin/empresa') }}" class="btn btn-default">Cancelar</a>
-            </form>    
+                    <button class="btn btn-info">Guardar cambios</button>
+                    <a href="{{ url('/admin/empresa') }}" class="btn btn-default">Cancelar</a>
+                </form>    
+            </div>
         </div>
     </div>
 </div>

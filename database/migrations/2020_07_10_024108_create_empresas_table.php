@@ -24,7 +24,8 @@ class CreateEmpresasTable extends Migration
             $table->string('colonia');
             $table->string('municipio');
             $table->string('estado');
-            $table->string('correo_enc')->unique();
+            $table->string('correo')->unique();
+            $table->boolean('acceso')->default(false);
             $table->string('contrasena');
             
             //FK

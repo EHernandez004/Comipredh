@@ -24,4 +24,27 @@ class EmpresaController extends Controller{
         return view('admin.empresa.edit')->with(compact('empresas'));
     }
 
+    public function update(Request $request, $id){
+
+        $empresas = Empresa::find($id);
+        $empresas->nombre = $request->input('nombre');
+        $empresas->rfc = $request->input('rfc');
+        $empresas->estado = $request->input('estado');
+        $empresas->municipio = $request->input('municipio');
+        $empresas->correo = $request->input('correo');
+        $empresas->acceso = $request->input('acceso');
+        $empresas->save();
+
+        return redirect('/admin/empresa');
+    }
+
+    public function destroy($id){
+        
+        $empresas = Empresa::find($id);
+        $empresas->delete();
+
+        return back();
+
+    }
+
 }
