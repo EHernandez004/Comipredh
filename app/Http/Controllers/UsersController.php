@@ -8,42 +8,35 @@ use Illuminate\Http\Request;
 class UsersController extends Controller{
 
     public function index(){
-        $users = User::select('select * from users where rol=1');
+//        $users = User::select('select * from users where rol=1');
+        $users = User::paginate(10);
         return view('admin.user.index')->with(compact('users')); //listado de las empresas.
     }
 
-/*    public function distroy(){
-
-        return view('admin.empresa.index');
-    }
-
     public function edit($id){
-        $empresas = Empresa::find($id);
+        $users = User::find($id);
         
-        return view('admin.empresa.edit')->with(compact('empresas'));
+        return view('admin.user.edit')->with(compact('users'));
     }
 
     public function update(Request $request, $id){
 
-        $empresas = Empresa::find($id);
-        $empresas->nombre = $request->input('nombre');
-        $empresas->rfc = $request->input('rfc');
-        $empresas->estado = $request->input('estado');
-        $empresas->municipio = $request->input('municipio');
-        $empresas->correo = $request->input('correo');
-        $empresas->acceso = $request->input('acceso');
-        $empresas->save();
+        $users = User::find($id);
+        $users->name = $request->input('name');
+        $users->apellidos = $request->input('apellidos');
+        $users->telefono = $request->input('telefono');
+        $users->email = $request->input('email');
+        $users->save();
 
-        return redirect('/admin/empresa');
+        return redirect('/admin/user');
     }
 
     public function destroy($id){
         
-        $empresas = Empresa::find($id);
-        $empresas->delete();
+        $users = User::find($id);
+        $users->delete();
 
         return back();
 
     }
-*/
 }

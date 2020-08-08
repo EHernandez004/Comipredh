@@ -13,11 +13,6 @@ class EmpresaController extends Controller{
         return view('admin.empresa.index')->with(compact('empresas')); //listado de las empresas.
     }
 
-    public function distroy(){
-
-        return view('admin.empresa.index');
-    }
-
     public function edit($id){
         $empresas = Empresa::find($id);
         
