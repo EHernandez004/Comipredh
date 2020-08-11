@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','Crear Usuario')
+@section('title','Crear Administrador')
 @section('body-class','product-page')
 
 @section('content')
@@ -10,7 +10,7 @@
 <div class="main main-raised">
     <div class="container">
         <div class="section text-center">
-            <h2 class="title text-center">Agregar Usuario</h2>
+            <h2 class="title text-center">Agregar Administrador</h2>
 
 <!--            @if ($errors->any())
                 <div class="alert alert-danger">
@@ -23,7 +23,7 @@
             @endif
 -->
 
-            <form method="post" action="{{ url('') }}">    
+            <form method="post" action="{{ url('/admin/user') }}">    
                 {{ csrf_field() }}
 
                 <div class="row">
@@ -47,16 +47,6 @@
                             <input type="text" class="form-control" name="telefono" >
                         </div>
                     </div>
-
-                     <div class="col-sm-4">
-                        <div class="form-group label-floating">
-                            <label class="control-label">Rol</label>
-                            <select class="form-control" name="rol">
-                                <option value="0">No</option>
-                                <option value="1">si</option>
-                            </select>
-                        </div>
-                    </div>
                     
                     <div class="col-sm-4">
                         <div class="form-group label-floating">
@@ -76,7 +66,7 @@
                 <br><br><br><br><br><br><br><br>
 
                     <button class="btn btn-info">Agregar</button>
-                    <a href="{{ url('/admin/empresa') }}" class="btn btn-default">Cancelar</a>
+                    <a href="{{ url('/admin/user') }}" class="btn btn-default">Cancelar</a>
                 </form>    
             </div>
         </div>

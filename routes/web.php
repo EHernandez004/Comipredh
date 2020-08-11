@@ -29,7 +29,7 @@ Route::get('/admin/user', 'UsersController@index'); //Lista de Administradores
 Route::get('/admin/user/{id}/edit', 'UsersController@edit'); //Formulario de Edicion
 Route::post('/admin/user/{id}/edit', 'UsersController@update'); //Actualiza el usuario 
 Route::get('/admin/user/create', 'UsersController@create'); //Formulario de administrador
-Route::post('/admin/user', 'UsersController@store'); // Registro de administrador
+Route::post('/admin/user', 'UsersController@registro'); // Registro de administrador
 Route::delete('/admin/user/{id}', 'UsersController@destroy'); //Elimina User
 
 
