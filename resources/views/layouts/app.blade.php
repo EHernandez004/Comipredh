@@ -48,6 +48,15 @@
                                 </a>
 
                                 <ul class="dropdown-menu">
+                                    @if(auth()->user()->rol)
+                                    <li>
+                                        <a href="{{url ('admin/user')}}">Gestión de Admin</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{url ('admin/empresa')}}">Gestión de Empresas</a>
+                                    </li>
+                                    @endif
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
