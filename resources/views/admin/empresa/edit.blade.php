@@ -30,35 +30,35 @@
                     <div class="col-sm-4">
                         <div class="form-group label-floating">
                             <label class="control-label">Nombre de la Empresa</label>
-                            <input type="text" class="form-control" name="nombre" value="{{$empresas->nombre}}">
+                            <input type="text" class="form-control" readonly="readonly" name="nombre" value="{{$empresas->nombre}}">
                         </div>
                     </div>
                     
                     <div class="col-sm-4">
                         <div class="form-group label-floating">
                             <label class="control-label">RFC</label>
-                            <input type="text" class="form-control" name="rfc" value="{{$empresas->rfc}}">
+                            <input type="text" class="form-control" readonly="readonly" name="rfc" value="{{$empresas->rfc}}">
                         </div>
                     </div>
 
                     <div class="col-sm-4">
                         <div class="form-group label-floating">
                             <label class="control-label">Estado</label>
-                            <input type="text" class="form-control" name="estado" value="{{$empresas->estado}}">
+                            <input type="text" class="form-control" readonly="readonly" name="estado" value="{{$empresas->estado}}">
                         </div>
                     </div>
                     
                     <div class="col-sm-4">
                         <div class="form-group label-floating">
                             <label class="control-label">Municipio</label>
-                            <input type="text" class="form-control" name="municipio" value="{{$empresas->municipio}}">
+                            <input type="text" class="form-control" readonly="readonly" name="municipio" value="{{$empresas->municipio}}">
                         </div>
                     </div>
                     
                     <div class="col-sm-4">
                         <div class="form-group label-floating">
                             <label class="control-label">Correo</label>
-                            <input type="email" class="form-control" name="correo" value="{{$empresas->correo}}">
+                            <input type="email" class="form-control" readonly="readonly" name="correo" value="{{$empresas->correo}}">
                         </div>
                     </div>
                 
