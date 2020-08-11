@@ -14,11 +14,11 @@ class AdminMiddleware
      * @return mixed
      */
     public function handle($request, Closure $next)
-    {
-        if(!auth()->user()->rol){
+    {       
+        if(!auth()->user()->admin){
             return redirect('/');
         }
-        
+
         return $next($request);
     }
 }
