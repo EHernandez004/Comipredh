@@ -1,0 +1,75 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Empresa;
+use \Illuminate\Support\Facades\Validator ;
+
+
+class LoginEmpresaController extends Controller
+{
+    //
+    public function RegistroEmpresa(Request $request)
+    {
+        $validacion = Validator ::make($request->all(),
+            [
+               'nombre' => 'required|max:50',
+               'rfc' => 'required|max:50',
+               'cp' => 'required|max:50',
+               'calle' => 'required|max:50',
+               'n_ext' => 'required|max:20',
+               'n_int' => '|max:10',
+               'colonia' => 'required|max:50',
+               'municipio' => 'required|max:50',
+               'estado' => 'required|max:50',
+               'correo' => 'email|unique:usuario',
+               'contrasena' => 'required|min:6'
+            ]);
+        if ($validacion->fails())
+        {
+            return redirect('/register')
+                ->withInput()
+                ->withErrors($validacion);
+        }
+
+        $empresa = new Empresas();
+        $empresa->nombre = $request->nombre;
+        $empresa->rfc = $request->rfc;
+        $empresa->cp = $request->cp;
+        $empresa->calle = $request->calle;
+        $empresa->n_ext = $request->n_ext;
+        $empresa->n_int = $request->n_int;
+        $empresa->colonia = $request->colonia;
+        $empresa->municipio = $request->municipio;
+        $empresa->estado = $request->estado;
+        $empresa->correo = $request->correo;
+        $empresa->acceso = 0;
+        $empresa->id_user = 1;
+        $empresa->contrasena = bcrypt($request->contrasena);
+        $empresa->save();
+
+        return "Registro con Exito";
+
+    }
+
+    public function LoginUsuario()
+    {
+        $credenciales = $this->Validate(request(),
+        [
+            'correo' =>'required|email',
+            'contrasena' => 'required|min:6'
+        ]);
+
+        if (Auth::attempt($credenciales))
+        {
+            return 'Login ok';
+        }
+        else
+        {
+            return back()
+            ->withErrors(['correo'=>trans('auth.failed')])
+            ->withInput(request(['correo']));
+        }
+    }
+}   

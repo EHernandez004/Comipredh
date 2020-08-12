@@ -29,5 +29,5 @@ Route::middleware(['auth','admin'])->prefix('admin')->group(function (){
 });
 
 //Logeo
-Route::post ('/registrar','LoginUsuarioController@RegistroCliente');
-Route::post ('/verificar','LoginUsuarioController@LoginUsuario');
+Route::post ('/registrar','LoginEmpresaController@RegistroEmpresa');
+Route::post ('/verificar','LoginEmpresaController@LoginUsuario');
