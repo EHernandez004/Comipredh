@@ -11,7 +11,7 @@
     <div class="container">
         <div class="section text-center">
             <h2 class="title">Administradores</h2>
-            <a href="{{ url('/admin/user/create') }}" class="btn btn-primary btn-round">Nuevo Administrador</a> 
+            <a href="{{ url('/admin/user/create') }}" class="btn btn-default btn-round">Nuevo Administrador</a> 
             <div class="team">
                 <div class="row">                
                     <table class = "table">
