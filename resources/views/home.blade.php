@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','Crear Administrador')
+@section('title','Bienvenido')
 @section('body-class','product-page')
 
 @section('content')

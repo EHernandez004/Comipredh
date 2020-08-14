@@ -19,13 +19,14 @@ class LoginEmpresaController extends Controller
                'cp' => 'required|max:50',
                'calle' => 'required|max:50',
                'n_ext' => 'required|max:20',
-               'n_int' => '|max:10',
+               'n_int' => 'max:10',
                'colonia' => 'required|max:50',
                'municipio' => 'required|max:50',
                'estado' => 'required|max:50',
                'correo' => 'email|unique:usuario',
                'contrasena' => 'required|min:6'
             ]);
+            
         if ($validacion->fails())
         {
             return redirect('/register')
@@ -44,16 +45,16 @@ class LoginEmpresaController extends Controller
         $empresa->municipio = $request->municipio;
         $empresa->estado = $request->estado;
         $empresa->correo = $request->correo;
+        $empresa->contrasena = bcrypt($request->contrasena);
         $empresa->acceso = 0;
         $empresa->id_user = 1;
-        $empresa->contrasena = bcrypt($request->contrasena);
         $empresa->save();
 
         return "Registro con Exito";
 
     }
 
-    public function LoginUsuario()
+    public function LoginEmpresa()
     {
         $credenciales = $this->Validate(request(),
         [

@@ -48,6 +48,12 @@
                                 </a>
 
                                 <ul class="dropdown-menu">
+                                    @if(!auth()->user()->rol)
+                                    <li>
+                                        <a href="{{url ('vacante')}}">Vacantes</a>
+                                    </li>
+                                    @endif
+
                                     @if(auth()->user()->rol)
                                     <li>
                                         <a href="{{url ('admin/user')}}">Gestión de Admin</a>
