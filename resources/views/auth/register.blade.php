@@ -13,7 +13,7 @@
                         {{ csrf_field() }}
                         <div class="header header-primary text-center">
                             <h4>Registrate</h4>
-                            <h8>Si eres un Empresario y necesitas talento,<br><a href="{{ url('registrarEmpresa') }}">
+                            <h8>Si eres un Empresario y necesitas talento,<br><a href="{{ url('/empresa/registerEmpresa') }}">
                             Registrate aquí </a></h8>
                         </div>
                         

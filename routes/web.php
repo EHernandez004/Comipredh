@@ -31,7 +31,10 @@ Route::middleware(['auth','admin'])->prefix('admin')->group(function (){
 //Vacantes
 Route::get('/vacante', 'vacanteController@index'); //Lista de Vacantes
 
+//Empresa Registro
+Route::get('/empresa/registerEmpresa', 'LoginEmpresaController@create'); //Formulario de administrador
+Route::post('/empresa', 'LoginEmpresaController@registro'); // Registro de administrador
 
 //Logeo
-Route::post ('/registrar','LoginEmpresaController@RegistroEmpresa');
-Route::post ('/verificar','LoginEmpresaController@LoginUsuario');
+//Route::post ('/registrar','LoginEmpresaController@RegistroEmpresa');
+//Route::post ('/verificar','LoginEmpresaController@LoginUsuario');

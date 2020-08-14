@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Empresa;
 use \Illuminate\Support\Facades\Validator ;
+use Auth;
 
 
 class LoginEmpresaController extends Controller
 {
-    //
+    /*
     public function RegistroEmpresa(Request $request)
     {
         $validacion = Validator ::make($request->all(),
@@ -29,7 +30,7 @@ class LoginEmpresaController extends Controller
             
         if ($validacion->fails())
         {
-            return redirect('/register')
+            return redirect('/#register')
                 ->withInput()
                 ->withErrors($validacion);
         }
@@ -72,5 +73,31 @@ class LoginEmpresaController extends Controller
             ->withErrors(['correo'=>trans('auth.failed')])
             ->withInput(request(['correo']));
         }
+    }*/
+
+    public function create(){
+
+        return view('empresa.registerEmpresa');
+    }
+
+    public function registro(Request $request){
+        $empresas = new Empresa();
+
+        $empresas->nombre = $request->nombre;
+        $empresas->rfc = $request->rfc;
+        $empresas->cp = $request->cp;
+        $empresas->calle = $request->calle;
+        $empresas->n_ext = $request->n_ext;
+        $empresas->n_int = $request->n_int;
+        $empresas->colonia = $request->colonia;
+        $empresas->municipio = $request->municipio;
+        $empresas->estado = $request->estado;
+        $empresas->correo = $request->correo;
+        $empresas->contrasena = bcrypt($request->contrasena);
+        $empresas->acceso = 0;
+        $empresas->id_user = 1;
+        $empresas->save();
+
+        return "Registro con Exito";
     }
 }   
