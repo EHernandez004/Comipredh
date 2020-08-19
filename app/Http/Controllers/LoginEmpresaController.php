@@ -98,6 +98,6 @@ class LoginEmpresaController extends Controller
         $empresas->id_user = 1;
         $empresas->save();
 
-        return "Registro con Exito";
+        return '<script type="text/javascript">alert("Registro con Exito");</script>';
     }
 }   

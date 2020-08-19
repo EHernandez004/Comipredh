@@ -15,7 +15,6 @@ class CreatePostulacionsTable extends Migration
     {
         Schema::create('postulacions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre');
             $table->date('fecha');
             $table->time('hora');
 
